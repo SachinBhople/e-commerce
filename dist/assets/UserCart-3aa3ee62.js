@@ -1,0 +1,1 @@
+import{j as r}from"./index-5e883bd7.js";import{N as s,F as t}from"./Footer-fd0963a5.js";import{C as o}from"./Cart-fc979745.js";import"./index-e03b2af1.js";const i=()=>r.jsxs(r.Fragment,{children:[r.jsx(s,{}),r.jsx(o,{}),r.jsx(t,{})]});export{i as default};

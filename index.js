@@ -1,6 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
+const path = require("path")
 require("dotenv").config()
 
 //1 database Connect
@@ -16,10 +17,12 @@ app.use(cors({
 }))
 
 // 3userRoutes
+app.use(express.static(path.join(__dirname, "dist")))
 app.use("/api/auth", require("./routes/auth.routes"))
 app.use("/api/admin", require("./routes/admin.routes"))
 app.use("/api/order", require("./routes/order.routes"))
 app.use("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "dist", "index.html"))
     res.status(404).json({ message: "Resource Not Found" })
 })
 
